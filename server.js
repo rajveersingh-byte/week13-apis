@@ -55,6 +55,13 @@ app.get('/product/:id', (req, res) => {
 });
 
 
+app.get('/', (req, res) => {
+    res.status(200).send(
+        'API is running! Please visit /product, /category, or /brands.'
+    );
+});
+
+
 
 let sycn = async () => {
 
