@@ -6,30 +6,29 @@ const app = express();
 app.use(express.json());
 
 
-
 app.get('/category', (req, res) => {
     res.status(200).json({
-        success: true,
-        total: category.length,
-        data: category
+        _success: true,
+        _total: category.length,
+        _data: category
     });
 });
 
 
 app.get('/brands', (req, res) => {
     res.status(200).json({
-        success: true,
-        total: brands.length,
-        data: brands
+        _success: true,
+        _total: brands.length,
+        _data: brands
     });
 });
 
 
 app.get('/product', (req, res) => {
     res.status(200).json({
-        success: true,
-        total: products.length,
-        data: products
+        _success: true,
+        _total: products.length,
+        _data: products
     });
 });
 
@@ -49,8 +48,8 @@ app.get('/product/:id', (req, res) => {
     }
 
     res.status(200).json({
-        success: true,
-        data: product
+        _success: true,
+        _data: product
     });
 });
 
@@ -64,7 +63,6 @@ app.get('/', (req, res) => {
 
 
 let sycn = async () => {
-
     await app.listen(process.env.PORT, () => {
         console.log(`Server Start http://localhost:${process.env.PORT}`);
     })
